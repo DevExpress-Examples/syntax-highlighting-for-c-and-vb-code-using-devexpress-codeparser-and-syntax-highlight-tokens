@@ -1,0 +1,12 @@
+﻿<dx:ThemedWindow x:Class="SyntaxHighlightSimple.MainWindow" mc:Ignorable="d" Title="MainWindow" Height="450" Width="800" 
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:SyntaxHighlightSimple" 
+    xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit">
+    <Grid>
+        <dxre:RichEditControl x:Name="richEditControl1" ActiveViewType="Draft" Loaded="richEditControl1_Loaded"/>
+    </Grid>
+</dx:ThemedWindow>
