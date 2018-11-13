@@ -27,7 +27,7 @@ Namespace SyntaxHighlightSimple
         Private Sub richEditControl1_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
             ' Use service substitution to register a custom service that implements highlighting.
             richEditControl1.ReplaceService(Of ISyntaxHighlightService)(New MySyntaxHighlightService(richEditControl1))
-            Dim path As String = "MainWindow.xaml.cs"
+            Dim path As String = "MainWindow.xaml.vb"
             richEditControl1.LoadDocument(path, DocumentFormat.PlainText)
         End Sub
     End Class
@@ -81,13 +81,13 @@ Namespace SyntaxHighlightSimple
         Private Sub HighlightCategorizedToken(ByVal token As CategorizedToken, ByVal syntaxTokens As List(Of SyntaxHighlightToken))
             Dim backColor As Color = syntaxEditor.ActiveView.BackColor
             Dim category As TokenCategory = token.Category
-            If category Is TokenCategory.Comment Then
+            If category = TokenCategory.Comment Then
                 syntaxTokens.Add(SetTokenColor(token, commentProperties, backColor))
-            ElseIf category Is TokenCategory.Keyword Then
+            ElseIf category = TokenCategory.Keyword Then
                 syntaxTokens.Add(SetTokenColor(token, keywordProperties, backColor))
-            ElseIf category Is TokenCategory.String Then
+            ElseIf category = TokenCategory.String Then
                 syntaxTokens.Add(SetTokenColor(token, stringProperties, backColor))
-            ElseIf category Is TokenCategory.XmlComment Then
+            ElseIf category = TokenCategory.XmlComment Then
                 syntaxTokens.Add(SetTokenColor(token, xmlCommentProperties, backColor))
             Else
                 syntaxTokens.Add(SetTokenColor(token, textProperties, backColor))
@@ -108,14 +108,14 @@ Namespace SyntaxHighlightSimple
             Return New SyntaxHighlightToken(tokenStart, tokenEnd - tokenStart, foreColor)
         End Function
 
-        #Region "#ISyntaxHighlightServiceMembers"
-        Public Sub Execute()
+#Region "#ISyntaxHighlightServiceMembers"
+        Public Sub Execute() Implements ISyntaxHighlightService.Execute
             Dim newText As String = syntaxEditor.Text
             ' Determine language by file extension.
             Dim ext As String = Path.GetExtension(syntaxEditor.Options.DocumentSaveOptions.CurrentFileName)
             Dim lang_ID As ParserLanguageID = ParserLanguage.FromFileExtension(ext)
             ' Do not parse HTML or XML.
-            If lang_ID Is ParserLanguageID.Html OrElse lang_ID Is ParserLanguageID.Xml OrElse lang_ID Is ParserLanguageID.None Then
+            If lang_ID = ParserLanguageID.Html OrElse lang_ID = ParserLanguageID.Xml OrElse lang_ID = ParserLanguageID.None Then
                 Return
             End If
             ' Use DevExpress.CodeParser to parse text into tokens.
@@ -125,10 +125,11 @@ Namespace SyntaxHighlightSimple
             HighlightSyntax(highlightTokens)
         End Sub
 
-        Public Sub ForceExecute()
+        Public Sub ForceExecute() Implements ISyntaxHighlightService.ForceExecute
             Execute()
         End Sub
-        #End Region ' #ISyntaxHighlightServiceMembers
+
+#End Region ' #ISyntaxHighlightServiceMembers
     End Class
     ''' <summary>
     '''  This class provides colors to highlight the tokens.
