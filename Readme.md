@@ -5,6 +5,12 @@
 <!-- default badges end -->
 # Syntax highlighting for C# and VB code using DevExpress CodeParser and Syntax Highlight tokens
 
+This example demonstrates the use of the [ISyntaxHighlightService](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService) to display the source code of this example in different colors and fonts according to the category of terms. The project uses DevExpress parsers for C# and VB, available in the **DevExpress.CodeParser** library. Resulting tokens are converted into [SyntaxHighlightToken](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken) objects and format settings for different token types are specified. The [SubDocument.ApplySyntaxHighlight](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.SubDocument.ApplySyntaxHighlight(System.Collections.Generic.List-DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken-)) method applies formatting to document ranges corresponding to the tokens.
 
-<p>This example demonstrates the use of the <a href="https://documentation.devexpress.com/CoreLibraries/DevExpress.XtraRichEdit.Services.ISyntaxHighlightService.class">ISyntaxHighlightService</a> to display source code of this example in different colors and fonts according to the category of terms. To accomplish this, the text is parsed into tokens according to language syntax elements. The project uses DevExpress parsers for C# and VB, available in the  <strong>DevExpress.CodeParser</strong> library. Resulting tokens are converted into <a href="https://documentation.devexpress.com/CoreLibraries/DevExpress.XtraRichEdit.API.Native.SyntaxHighlightToken.class">SyntaxHighlightToken</a> objects and format settings for different token types are specified. The <a href="https://documentation.devexpress.com/CoreLibraries/DevExpress.XtraRichEdit.API.Native.SubDocument.ApplySyntaxHighlight.method">DevExpress.XtraRichEdit.API.Native.SubDocument.ApplySyntaxHighlight</a> method applies formatting to document ranges corresponding to the tokens.</p><p>
-<br/>
+## More Examples
+
+* [Rich Text Editor for WPF -- How to Use Syntax Highlight Tokens to implement T-SQL language Syntax Highlight](https://github.com/DevExpress-Examples/how-to-implement-t-sql-language-syntax-highlighting-by-creating-syntax-highlight-tokens)
+
+## Documentation
+
+* [How to: Highlight Document Syntax](https://docs.devexpress.com/WPF/14714/controls-and-libraries/rich-text-editor/examples/automation/how-to-highlight-document-syntax)
