@@ -15,6 +15,7 @@ This example demonstrates the use of the [ISyntaxHighlightService](https://docs.
 ## Documentation
 
 * [How to: Highlight Document Syntax](https://docs.devexpress.com/WPF/14714/controls-and-libraries/rich-text-editor/examples/automation/how-to-highlight-document-syntax)
+* [WPF Monaco-Based Code Editor](https://github.com/DevExpress-Examples/wpf-monaco-code-editor)
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
 
