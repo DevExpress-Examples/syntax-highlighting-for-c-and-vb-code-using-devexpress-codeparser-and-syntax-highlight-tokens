@@ -11,11 +11,11 @@ This example demonstrates the use of the [ISyntaxHighlightService](https://docs.
 ## More Examples
 
 * [Rich Text Editor for WPF -- How to Use Syntax Highlight Tokens to implement T-SQL language Syntax Highlight](https://github.com/DevExpress-Examples/how-to-implement-t-sql-language-syntax-highlighting-by-creating-syntax-highlight-tokens)
+* [WPF Monaco-Based Code Editor](https://github.com/DevExpress-Examples/wpf-monaco-code-editor)
 
 ## Documentation
 
 * [How to: Highlight Document Syntax](https://docs.devexpress.com/WPF/14714/controls-and-libraries/rich-text-editor/examples/automation/how-to-highlight-document-syntax)
-* [WPF Monaco-Based Code Editor](https://github.com/DevExpress-Examples/wpf-monaco-code-editor)
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
 
